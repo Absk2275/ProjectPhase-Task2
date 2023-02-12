@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #RectContainer {
+            height:500px;
+            width: 100%;
+            border: 1px solid black;
+            background-color: aqua;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .buttons {
+            display:flex;
+            text-align: center;
+            justify-content: space-evenly;
+            padding:5px;
+        }
+        #changeColor  {
+            padding: 5px;
+            border-radius:3px;
+            border: none;
+            background-color: blue;
+            color:white;
+        }
+        #addChild {
+            padding: 5px;
+            border-radius:3px;
+            border: none;
+            
+            color:white;
+            background-color: green;
+        }
+        #removeChild{
+            padding: 5px;
+            border-radius:3px;
+            border: none;
+            color:white;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="RectContainer">
+      
+    </div>
+    <div  class="buttons">
+        <div>
+            <button id="changeColor">changeColor</button>
+        </div>
+        <div>
+            <button id="addChild">addChild</button>
+        </div>
+        <div>
+            <button  id="removeChild">removeChild</button>
+        </div>
+    </div>
+
+
+    <script>
+       let colors = ["yellow"," white", "blue", "red"];
+       let button = document.getElementById("changeColor");
+       button.addEventListener("click", function (){
+        let random = colors[Math.floor(Math.random()*colors.length)]
+        let container = document.getElementById("RectContainer");
+        container.style.background=random;
+       })
+
+       let addChild=document.getElementById("addChild");
+       
+
+       addChild.addEventListener("click", function(){
+        var sq = document.createElement("div");
+        let container=document.getElementById("RectContainer");
+        container.appendChild(sq);
+        sq.style.cssText="width:100px; height:100px; background: yellow";
+        console.log(sq);
+       })
+
+       let removeChild = document.getElementById("removeChild");
+       removeChild.addEventListener("click", function () {
+        let container= document.getElementById("RectContainer");
+        container.removeChild(container.lastChild);
+       })
+
+
+    </script>
+</body>
+</html>
