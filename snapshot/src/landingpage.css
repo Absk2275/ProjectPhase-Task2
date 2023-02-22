@@ -1,0 +1,20 @@
+#main-container{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 10px;
+    background-color: hsl(209, 81%, 83%);  
+}
+#container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    height:800px;
+     width:600px;
+}
+#fromapi{
+    height:180px; 
+    width:180px;
+     margin:5px;
+}
